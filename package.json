@@ -1,0 +1,14 @@
+{
+  "name": "eip-abis",
+  "version": "0.0.1",
+  "description": "Minimal ABI definitions for common EIPs",
+  "author": "James McComish",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
