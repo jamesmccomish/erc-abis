@@ -1,4 +1,4 @@
-# eip-abis
+# erc-abis
 
 To install dependencies:
 

@@ -1,7 +1,7 @@
 {
-  "name": "eip-abis",
+  "name": "erc-abis",
   "version": "0.0.1",
-  "description": "Minimal ABI definitions for common EIPs",
+  "description": "Minimal ABI definitions for common ERCs",
   "author": "James McComish",
   "module": "index.ts",
   "type": "module",
