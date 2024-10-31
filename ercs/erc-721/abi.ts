@@ -17,7 +17,7 @@ export const erc721AbiRequired = [{
             indexed: true,
         }
     ],
-} {
+}, {
     name: "Approval",
     type: "event",
     inputs: [
@@ -35,7 +35,7 @@ export const erc721AbiRequired = [{
             indexed: true,
         }
     ],
-} {
+}, {
     name: "ApprovalForAll",
     type: "event",
     inputs: [
@@ -52,7 +52,7 @@ export const erc721AbiRequired = [{
             name: "_approved",
         }
     ],
-} {
+}, {
     name: "balanceOf",
     type: "function",
     stateMutability: "view",
@@ -67,7 +67,7 @@ export const erc721AbiRequired = [{
             type: "uint256",
         }
     ],
-} {
+}, {
     name: "ownerOf",
     type: "function",
     stateMutability: "view",
@@ -82,7 +82,7 @@ export const erc721AbiRequired = [{
             type: "address",
         }
     ],
-} {
+}, {
     name: "safeTransferFrom",
     type: "function",
     stateMutability: "payable",
@@ -102,7 +102,7 @@ export const erc721AbiRequired = [{
         }
     ],
     outputs: [],
-} {
+}, {
     name: "safeTransferFrom",
     type: "function",
     stateMutability: "payable",
@@ -119,7 +119,7 @@ export const erc721AbiRequired = [{
         }
     ],
     outputs: [],
-} {
+}, {
     name: "transferFrom",
     type: "function",
     stateMutability: "payable",
@@ -136,7 +136,7 @@ export const erc721AbiRequired = [{
         }
     ],
     outputs: [],
-} {
+}, {
     name: "approve",
     type: "function",
     stateMutability: "payable",
@@ -150,7 +150,7 @@ export const erc721AbiRequired = [{
         }
     ],
     outputs: [],
-} {
+}, {
     name: "setApprovalForAll",
     type: "function",
     stateMutability: "nonpayable",
@@ -164,7 +164,7 @@ export const erc721AbiRequired = [{
         }
     ],
     outputs: [],
-} {
+}, {
     name: "getApproved",
     type: "function",
     stateMutability: "view",
@@ -179,7 +179,7 @@ export const erc721AbiRequired = [{
             type: "address",
         }
     ],
-} {
+}, {
     name: "isApprovedForAll",
     type: "function",
     stateMutability: "view",
@@ -236,7 +236,7 @@ export const erc721MetadataAbi = [{
             type: "string",
         }
     ],
-} {
+}, {
     name: "symbol",
     type: "function",
     stateMutability: "view",
@@ -246,7 +246,7 @@ export const erc721MetadataAbi = [{
             type: "string",
         }
     ],
-} {
+}, {
     name: "tokenURI",
     type: "function",
     stateMutability: "view",
@@ -274,7 +274,7 @@ export const erc721EnumerableAbi = [{
             type: "uint256",
         }
     ],
-} {
+}, {
     name: "tokenByIndex",
     type: "function",
     stateMutability: "view",
@@ -289,7 +289,7 @@ export const erc721EnumerableAbi = [{
             type: "uint256",
         }
     ],
-} {
+}, {
     name: "tokenOfOwnerByIndex",
     type: "function",
     stateMutability: "view",
