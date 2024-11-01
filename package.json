@@ -3,10 +3,25 @@
   "version": "0.0.1",
   "description": "Minimal ABI definitions for common ERCs",
   "author": "James McComish",
-  "module": "index.ts",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "bun run tsc",
+    "clean": "bun run rm -rf dist",
+    "prepare": "bun run build"
+    },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@biomejs/biome": "^1.9.3",
+    "@types/bun": "latest",
+    "abitype": "^1.0.6",
+    "viem": "^2.21.37",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
