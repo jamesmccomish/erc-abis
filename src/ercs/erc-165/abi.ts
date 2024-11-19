@@ -1,5 +1,5 @@
 /** [ERC-165: Standard Interface Detection](https://eips.ethereum.org/EIPS/eip-165) */
-export const erc165Abi = {
+export const erc165Abi = [{
     name: "supportsInterface",
     type: "function",
     stateMutability: "view",
@@ -14,4 +14,4 @@ export const erc165Abi = {
             type: "bool",
         }
     ]
-}
+}] as const

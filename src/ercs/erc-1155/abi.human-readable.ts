@@ -1,3 +1,5 @@
+import { erc165Abi } from "../erc-165/abi";
+
 /** [ERC-1155: Multi Token Standard](https://eips.ethereum.org/EIPS/eip-1155) */
 export const erc1155AbiRequired = [
 	"event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value)",
@@ -20,3 +22,6 @@ export const erc1155TokenReceiverAbi = [
 export const erc1155MetadataAbi = [
 	"function uri(uint256 id) view returns (string)",
 ];
+
+// Ommiting erc1155TokenReceiverAbi as it is used by the receiver of the token
+export const erc1155Abi = [...erc1155AbiRequired, ...erc1155MetadataAbi, ...erc165Abi];

@@ -1,3 +1,5 @@
+import { erc165Abi } from "../erc-165/abi"
+
 /** [ERC-721: Non-Fungible Token Standard](https://eips.ethereum.org/EIPS/eip-721) */
 export const erc721AbiRequired = [
     "event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId)",
@@ -29,3 +31,6 @@ export const erc721EnumerableAbi = [
     "function tokenByIndex(uint256 _index) external view returns (uint256)",
     "function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256)",
 ]
+
+// Ommiting erc721TokenReceiverAbi as it is used by the receiver of the token
+export const erc721Abi = [...erc721AbiRequired, ...erc721MetadataAbi, ...erc721EnumerableAbi, ...erc165Abi]

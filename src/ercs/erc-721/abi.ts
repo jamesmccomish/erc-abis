@@ -1,3 +1,5 @@
+import { erc165Abi } from "../erc-165/abi"
+
 /** [ERC-721: Non-Fungible Token Standard](https://eips.ethereum.org/EIPS/eip-721) */
 export const erc721AbiRequired = [{
     name: "Transfer",
@@ -309,3 +311,6 @@ export const erc721EnumerableAbi = [{
     ],
 }
 ]
+
+// Ommiting erc721TokenReceiverAbi as it is used by the receiver of the token
+export const erc721Abi = [...erc721AbiRequired, ...erc721MetadataAbi, ...erc721EnumerableAbi, ...erc165Abi]
