@@ -1,15 +1,3 @@
-# erc-abis
+# erc-abis-ts
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+A collection of common ERC ABIs in both ABI and human-readable form. ERCs are defined based on their required/optional items in the [Ethereum Improvement Proposals](https://eips.ethereum.org/all) list.
