@@ -1,4 +1,4 @@
-import { erc165Abi } from "../erc-165";
+import { erc165Abi } from "./erc-165";
 
 /** [ERC-1155: Multi Token Standard](https://eips.ethereum.org/EIPS/eip-1155) */
 export const erc1155AbiRequired = [
