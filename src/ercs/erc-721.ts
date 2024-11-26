@@ -1,4 +1,4 @@
-import { erc165Abi } from "../erc-165/abi"
+import { erc165Abi } from "../erc-165"
 
 /** [ERC-721: Non-Fungible Token Standard](https://eips.ethereum.org/EIPS/eip-721) */
 export const erc721AbiRequired = [
