@@ -7,6 +7,9 @@
  * Based of https://github.com/eth-infinitism/account-abstraction/releases/tag/v0.7.0
  */
 
+/**
+ * Manage deposits and stakes for ERC-4337 accounts
+*/
 export const stakeManagerAbi = [
     "event Deposited(address indexed account, uint256 totalDeposit)",
     "event Withdrawn(address indexed account, address withdrawAddress, uint256 amount)",
@@ -22,11 +25,17 @@ export const stakeManagerAbi = [
     "function withdrawTo(address payable withdrawAddress, uint256 withdrawAmount) external"
 ]
 
+/**
+ * Manage nonces for ERC-4337 accounts
+ */
 export const nonceManagerAbi = [
     "function getNonce(address sender, uint192 key) external view returns (uint256 nonce)",
     "function incrementNonce(uint192 key) external"
 ]
 
+/**
+ * Core EntryPoint V7 ABI
+ */
 export const entryPointBaseAbi = [
     "event UserOperationEvent(bytes32 indexed userOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)",
     "event AccountDeployed(bytes32 indexed userOpHash, address indexed sender, address factory, address paymaster)",
@@ -42,6 +51,9 @@ export const entryPointBaseAbi = [
     "function delegateAndRevert(address target, bytes calldata data) external"
 ]
 
+/**
+ * EIP-4337 singleton EntryPoint V7 implementation
+ */
 export const entryPointAbi = [...stakeManagerAbi, ...nonceManagerAbi, ...entryPointBaseAbi]
 
 export const entryPointSimulationsAbi = [
@@ -49,18 +61,30 @@ export const entryPointSimulationsAbi = [
     "function simulateHandleOp(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature) calldata op, address target, bytes calldata targetCallData) external returns (tuple(uint256 preOpGas, uint256 paid, uint256 accountValidationData, uint256 paymasterValidationData, bool targetSuccess, bytes targetResult))"
 ]
 
+/**
+ * Aggregated Signatures validator ABI
+ */
 export const aggregatorAbi = [
     "function validateSignatures(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature)[] calldata userOps, bytes calldata signature) external view",
     "function validateUserOpSignature(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature) calldata userOp) external view returns (bytes memory sigForUserOp)",
     "function aggregateSignatures(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature)[] calldata userOps) external view returns (bytes memory aggregatedSignature)"
 ]
 
+/**
+ * Account ABI to validate user operations
+ */
 export const accountAbi = [
     "function validateUserOp(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature) calldata userOp, bytes32 userOpHash, uint256 missingAccountFunds) external returns (uint256 validationData)"
 ]
 
+/**
+ * Account ABI to execute user operations
+ */
 export const accountExecuteAbi = [
     "function executeUserOp(tuple(address sender, uint256 nonce, bytes initCode, bytes callData, bytes32 accountGasLimits, uint256 preVerificationGas, bytes32 gasFees, bytes paymasterAndData, bytes signature) calldata userOp, bytes32 userOpHash) external"
 ]
 
+/**
+ * ERC-4337 Account ABI
+ */
 export const erc4337AccountAbi = [...accountAbi, ...accountExecuteAbi]
